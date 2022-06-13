@@ -63,18 +63,17 @@ pub enum Color {
 
 impl Distribution<Color> for Standard {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Color {
-        match rng.gen_range(0..=11) {
+        match rng.gen_range(0..=10) {
             0 => Color::Red,
             1 => Color::Green,
             2 => Color::Yellow,
             3 => Color::Magenta,
             4 => Color::Cyan,
-            5 => Color::Reset,
-            6 => Color::LightredEx,
-            7 => Color::LightgreenEx,
-            8 => Color::LightyellowEx,
-            9 => Color::LightblueEx,
-            10 => Color::LightmagentaEx,
+            5 => Color::LightredEx,
+            6 => Color::LightgreenEx,
+            7 => Color::LightyellowEx,
+            8 => Color::LightblueEx,
+            9 => Color::LightmagentaEx,
             _ => Color::LightcyanEx,
         }
     }
